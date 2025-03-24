@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    background-image: url(/image/guven-gunes-Iy3GN4iPLW8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* HEADER */
+header{
+    position: relative;
+    /* padding: 0 2rem; */
+}
+
+li{
+    list-style: none;
+}
+
+.navbar .logo a,
+.navbar .action-btn{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;    
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding-bottom: 5px; /* Tambahkan padding untuk ruang garis bawah */
+    position: relative; /* Dibutuhkan untuk garis bawah */
+}
+
+.navbar li a:hover {
+    color: white; /* Tidak mengubah warna saat hover */
+}
+
+.navbar li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Ketebalan garis bawah */
+    background-color: white; /* Warna garis bawah */
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar li a:hover::after {
+    width: 100%; /* Garis bawah muncul saat hover */
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    /* font-weight: bold; */
+}
+
+.navbar .logo a span{
+    color: #1B1F3B;
+    font-weight: bold;
+    font-family: poppins;
+}   
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle-btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* HERO */
+.content-hero{
+    height:  calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start ;
+    text-align: center;
+    color: #fff;
+    padding-top: 10%;
+}
+
+.content-hero h1{
+    font-size: 5rem;
+    margin-bottom: 1rem;
+} 
+
+.content-hero p{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    /* fontwe */
+}
+
+.content-hero button{
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1B1F3B;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn{
+    background-color: #1B1F3B;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action-btn:hover{
+    scale: 1.05;
+    /* color: #fff; */
+}
+
+.action-btn:active{
+    scale: 0.05;
+}
+
+/* DROPDOWN MENU */
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu.open{
+    height: 240px;
+}
+
+.dropdown-menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-menu .action-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.service-title{
+    text-align: center;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px; /* Batasi lebar total grid */
+    margin: 0 auto; /* Rata tengah */
+  }
+  
+  .service-items { 
+    max-width: 250px; /* Atur lebar maksimal per kotak */
+    width: 100%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 auto; /* Biar kotaknya rata tengah di kolom */
+  }
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    gap: 20px;  
+    padding: 50px;
+    background: linear-gradient(to left, #1B1F3B 40%, transparent 40%);
+  }
+
+.image-content img {
+    border-radius: px;
+}
+  
+.text-content {   
+    max-width: 550px;
+ }
+
+ .text-content p, 
+ .text-content h2, 
+ .text-content a{
+    margin-bottom: 1.1rem;
+    font-family: poppins;
+    color: #333;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    color: #000;
+}
+
+.text-content h2 + p{
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.text-content a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+}
+  
+.image-content img {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    min-width: 300px;   
+}
+
+/* WHY US */
+.why-us {
+    background: url(/image/spacejoy-trG8989WjFA-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+
+}
+
+.why-us h2,
+.why-us-box h3,
+.why-us-box p {
+    color: #fff;
+    font-family: poppins;
+}
+
+.why-us h2 {
+    color: #000;
+}
+
+.why-us h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-transform: uppercase;   
+}
+
+.why-us-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.why-us-box {
+    background: rgba(0, 0, 0, 0.315);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    margin: 10px;
+}
+
+.why-us-box h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.why-us-box p {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE */
+@media(max-width: 992px){
+    .navbar .links,
+    .navbar .action-btn {
+        display: none;
+    }
+
+    .navbar .toggle-btn{
+        display: block;
+    }
+
+    .dropdown-menu{
+        display: block;
+    }
+}
+
+@media (max-widht: 576px) {
+    .dropdown-menu{
+        left: 2rem;
+        width: unset;
+    }
+}
