@@ -9,7 +9,7 @@
     <table class="table mt-3">
         <thead>
             <tr>
-                <th>#</th>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Harga</th>
                 <th>Deskripsi</th>
@@ -21,7 +21,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $furniture->name }}</td>
-                    <td>Rp{{ number_format($furniture->price, 0, ',', '.') }}</td>
+                    <td><span class="price">{{ 'Rp' . number_format($furniture->price, 2, ',', '.') }}</span></td>
                     <td>{{ $furniture->description }}</td>
                     <td>
                         <a href="{{ route('furniture.edit', $furniture->id) }}" class="btn btn-warning btn-sm">Edit</a>

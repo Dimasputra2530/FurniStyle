@@ -14,6 +14,6 @@ use App\Http\Controllers\FurnitureController;
 */
 Route::resource('furniture', FurnitureController::class);
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
