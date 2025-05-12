@@ -12,7 +12,6 @@ use App\Http\Controllers\FurnitureController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('furniture', FurnitureController::class);
 
 Route::get('/', function () {
     return view('home');
