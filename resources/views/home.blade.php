@@ -455,155 +455,126 @@
         </div>
     </footer>
 
-
-<!-- sign up / sign in -->
-<div class="modal fade auth-modal" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 shadow">
-            <div class="row g-0">
-                <div class="col-md-7">
-                    <div class="auth-form-container">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5 class="auth-title" id="authModalLabel">Create your account</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        
-                        <button class="btn btn-outline-secondary w-100 mb-4 google-btn">
-                            <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/icons/google.svg" alt="Google" width="20" height="20">
-                            Login with Google
-                        </button>
-                        
-                        <div class="divider">
-                            <span>or</span>
-                        </div>
-                        
-                        <form id="signupForm" class="mt-3">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                            </div>
-                            <div class="mb-4 form-check">
-                                <input type="checkbox" class="form-check-input" id="terms">
-                                <label class="form-check-label" for="terms">
-                                    I agree to all Terms, Privacy Policy and Fees
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-dark w-100">Sign Up</button>
-                        </form>
-                        
-                        <p class="text-center mt-4 mb-0">
-                            Already have an account? <a href="#" id="toggleLoginForm" class="link-primary">Log in</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-5 d-none d-md-block">
-                    <div class="auth-image-container h-100">
-                        <div class="auth-image-content text-white p-4 d-flex flex-column justify-content-end">
-                            <h2 class="fs-4 mb-3">Discovering the Best<br>Furniture for Your Home</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Ikon User -->
+<div class="profile-circle" style="width: 40px; height: 40px; border-radius: 50%; background: #eee; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+  <i class="bi bi-person-fill" style="font-size: 20px; color: #55713D;"></i>
 </div>
 
-    <!-- bootstrap js bundle sama popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- javascript kustom buat elemen interaktif -->
-    <script>
- document.addEventListener('DOMContentLoaded', function() {
-            // pilih ikon user di navbar
-            const userIcon = document.querySelector('.profile-circle');
-            
-            // event listener buat tampilkan modal pas ikon user diklik
-            userIcon.addEventListener('click', function(e) {
-                e.preventDefault();
-                const authModal = new bootstrap.Modal(document.getElementById('authModal'));
-                authModal.show();
-            });
-            
-            // toggle antara form Sign Up dan Login
-            const toggleLink = document.getElementById('toggleLoginForm');
-            toggleLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                const authTitle = document.getElementById('authModalLabel');
-                const signupForm = document.getElementById('signupForm');
-                
-                if (authTitle.innerText === 'Create your account') {
-                    authTitle.innerText = 'Login to your account';
-                    toggleLink.innerText = 'Sign up';
-                    // ubah ke form login
-                    signupForm.innerHTML = `
-                        <div class="mb-3">
-                            <label for="loginEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="loginPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
-                        </div>
-                        <div class="mb-4 d-flex justify-content-end">
-                            <a href="#" class="small">Forgot password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-dark w-100">Login</button>
-                    `;
-                } else {
-                    authTitle.innerText = 'Create your account';
-                    toggleLink.innerText = 'Log in';
-                    // kembali ke form sign up
-                    signupForm.innerHTML = `
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                        </div>
-                        <div class="mb-4 form-check">
-                            <input type="checkbox" class="form-check-input" id="terms">
-                            <label class="form-check-label" for="terms">
-                                I agree to all Terms, Privacy Policy and Fees
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-dark w-100">Sign Up</button>
-                    `;
-                }
-            });
-        });
+<!-- Modal Login & Sign Up -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 15px; overflow: hidden;">
+      <div class="d-flex flex-row">
+        <!-- Left: Form Area -->
+        <div class="col-md-6 p-5">
+          <div class="modal-header border-0 p-0 mb-3">
+            <h5 class="modal-title fw-bold text-success" id="authModalLabel">Login to your account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
 
-        // javascript buat toggle accordion FAQ
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-question');
-            
-            faqItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const parent = this.parentElement;
-                    parent.classList.toggle('active');
-                    
-                    const icon = this.querySelector('.faq-toggle i');
-                    if (parent.classList.contains('active')) {
-                        icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
-                    } else {
-                        icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
-                    }
-                });
-            });
-        });
+          <button class="btn btn-outline-secondary w-100 mb-3">
+            <i class="bi bi-google me-2"></i> Login with Google
+          </button>
+
+          <div class="text-center my-2 text-muted">— or —</div>
+
+          <!-- Form Sign Up -->
+          <form id="form-signup" action="{{ route('signup') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+              <label class="form-check-label" for="terms">
+                I agree to all Terms, Privacy Policy and Fees
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+          </form>
+
+          <!-- Form Login -->
+          <form id="form-login" action="{{ route('login') }}" method="POST" class="d-none">
+            @csrf
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Login</button>
+          </form>
+
+          <div class="text-center mt-3">
+            <small>Already have an account? <a href="#" id="toggleLoginForm">Sign up</a></small>
+          </div>
+        </div>
+
+        <!-- Right: Image Area -->
+        <div class="col-md-6 d-none d-md-block" style="background: url('/image/Rectangle 9 (1).png') center center / cover no-repeat;">
+          <div class="h-100 d-flex align-items-center justify-content-center text-white p-4" style="background-color: rgba(0,0,0,0.4);">
+            <h4 class="text-center">Discovering the Best Furniture for Your Home</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript Interaktif -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const userIcon = document.querySelector('.profile-circle');
+  const toggleLink = document.getElementById('toggleLoginForm');
+  const formSignup = document.getElementById('form-signup');
+  const formLogin = document.getElementById('form-login');
+  const authTitle = document.getElementById('authModalLabel');
+  const authModalElement = document.getElementById('authModal');
+
+  // Tampilkan modal saat klik user icon
+  if (userIcon && authModalElement) {
+    userIcon.addEventListener('click', function (e) {
+      e.preventDefault();
+      const authModal = new bootstrap.Modal(authModalElement);
+      authModal.show();
+    });
+  }
+
+  // Toggle Sign Up ↔ Login
+  if (toggleLink && formSignup && formLogin && authTitle) {
+    toggleLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (formSignup.classList.contains('d-none')) {
+        formSignup.classList.remove('d-none');
+        formLogin.classList.add('d-none');
+        authTitle.innerText = 'Create your account';
+        toggleLink.innerText = 'Log in';
+      } else {
+        formSignup.classList.add('d-none');
+        formLogin.classList.remove('d-none');
+        authTitle.innerText = 'Login to your account';
+        toggleLink.innerText = 'Sign up';
+      }
+    });
+  }
+});
+</script>
+
     </script>
+    
 </body>
 </html>
