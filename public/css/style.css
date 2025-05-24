@@ -236,16 +236,7 @@
             color: var(--white);
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 0.9rem;
-            }
-        }
+       
 
 /* ===== HERO SECTION ===== */
 .hero-section {
@@ -1326,3 +1317,14 @@
     }  
 
 }
+
+ /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+            }
+        }

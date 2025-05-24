@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- menuju shop dan about -->  
+    
 </head>
 <body>
     <!-- header & navigation -->
@@ -32,10 +34,10 @@
                             <a class="nav-link active" href="#">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Shop.html">SHOP</a>
+                            <a class="nav-link" href="{{ url('/shop') }}">SHOP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">ABOUT</a>
+                            <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">COLLECTION</a>
@@ -50,7 +52,7 @@
                         <a href="#" class="icon-link">
                             <i class="fas fa-heart"></i>
                         </a>
-                        <a href="#" class="icon-link cart-icon">
+                        <a href="{{ url('/cart') }}" class="icon-link cart-icon">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                         <a href="#" class="icon-link">
@@ -133,7 +135,7 @@
             <div class="container">
                 <div class="section-header d-flex justify-content-between align-items-center">
                     <h2 class="section-title">TOP PRODUCTS</h2>
-                    <a href="#" class="view-all-link">VIEW ALL PRODUCTS <i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="{{ url('/shop') }}" class="view-all-link">VIEW ALL PRODUCTS <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
 
                 <div class="row products-slider">
@@ -263,7 +265,7 @@
                         <p class="about-text">
                             At FurniStyle, we pride ourselves on creating beautiful living spaces that reflect your personal style and meet your functional needs. Our selection of high-quality furniture combines timeless design with innovative features, ensuring both aesthetic appeal and practical utility for your home.
                         </p>
-                        <a href="#" class="button-outline">EXPLORE OUR STORY</a>
+                        <a href="{{ url('/about') }}" class="button-outline">EXPLORE OUR STORY</a>
                     </div>
                     <div class="col-md-7">
                         <div class="about-image">

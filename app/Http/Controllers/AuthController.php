@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 
 class AuthController extends Controller
-{
+{   //fungsi untuk signup
     public function signup(Request $request)
 {
     $request->validate([
@@ -32,8 +32,9 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-public function login(Request $request)
-{
+    //fungsi untuk login
+    public function login(Request $request)
+    {
     $credentials = $request->only('email', 'password');
 
     $user = User::where('email', $credentials['email'])->first();
