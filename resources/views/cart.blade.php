@@ -16,12 +16,13 @@
 </head>
 <body>
     <div class="container py-4">
-        <!-- Back Button -->
+      <!-- Back Button -->
         <div class="mb-4">
             <a href="{{ url()->previous() }}" class="back-button">
                 <i class="fas fa-arrow-left me-2"></i> Back
             </a>
         </div>
+
         
         <!-- Shopping Cart Title -->
         <h2 class="shopping-cart-title">Shopping Cart</h2>
@@ -236,7 +237,7 @@
                     <div class="form-check me-3">
                         <input class="form-check-input" type="checkbox" id="kuzanSofa">
                     </div>
-                    <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="Kuzan Sofa" class="product-image me-3">
+                    <img src="{{asset('/image shop/kuzan-sofa.png') }}" alt="Kuzan Sofa" class="product-image me-3">
                     <div>
                         <div class="product-name">KUZAN SOFA</div>
                         <div class="variation">Variation: Brown</div>

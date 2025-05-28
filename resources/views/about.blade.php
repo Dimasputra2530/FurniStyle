@@ -52,7 +52,7 @@
                             <a href="{{ url('/cart') }}" class="icon-link cart-icon">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
-                            <a href="#" class="icon-link">
+                            <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#authModal">
                                 <div class="profile-circle">
                                     <i class="fas fa-user"></i>
                                 </div>

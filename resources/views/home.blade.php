@@ -49,8 +49,6 @@
                             <input type="text" placeholder="Search items...">
                             <button><i class="fas fa-search"></i></button>
                         </div>
-                        <a href="#" class="icon-link">
-                            <i class="fas fa-heart"></i>
                         </a>
                         <a href="{{ url('/cart') }}" class="icon-link cart-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -312,7 +310,7 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <h2 class="section-title">FURNITURE TO BRING HOME TO LIFE</h2>
-                        <a href="#" class="button-filled">SHOP NOW</a>
+                        <a href="{{ url('/shop') }}" class="button-filled">SHOP NOW</a>
                     </div>
                 </div>
             </div>
