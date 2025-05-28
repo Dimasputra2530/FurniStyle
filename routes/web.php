@@ -1,10 +1,11 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home'); // ← Ditambahkan nama 'home' di sini
 
 Route::get('/login', function () {
     return view('LOGIN.login');
