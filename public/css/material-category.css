@@ -1,4 +1,4 @@
- /* CSS Variables */
+    /* CSS Variables */
     :root {
         --primary: #5a7d2f;
         --primary-dark: #4a6b1f;
@@ -203,6 +203,12 @@ header {
 
     .sidebar-menu a:hover {
         color: var(--primary);
+    }
+
+    /* Active state styling */
+    .sidebar-menu a.active {
+        color: var(--primary);
+        font-weight: 600;
     }
 
     .sidebar-menu i {
@@ -434,6 +440,7 @@ header {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.8rem;
 }
+
 
 /* Updated Modal Styles */
 .modal-dialog {

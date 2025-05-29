@@ -406,10 +406,6 @@ header {
     font-size: 0.8rem;
 }
 
-.made-by {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-}
 
 /* Responsive Adjustments */
 @media (max-width: 991.98px) {

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- menuju shop dan about -->  
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/png">
     
 </head>
 <body>
@@ -120,8 +120,8 @@
                     </div>
                     <div class="col-md-4 col-sm-6 mb-4">
                         <div class="category-card">
-                            <img src="{{ asset('image/Rectangle 9 (1).png') }}" alt="Utility" class="img-fluid">
-                            <div class="category-name">UTILITY</div>
+                            <img src="{{ asset('image/Rectangle 7 (1).png') }}" alt="Laundry" class="img-fluid">
+                            <div class="category-name">Laundry</div>
                         </div>
                     </div>
                 </div>
@@ -141,9 +141,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/metin-ozer-20lYyolI8Ts-unsplash.jpg') }}" alt="Wooden Chair" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Wooden Chair</h3>
@@ -155,9 +152,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/ansuman-mishra-5kza-6yGHnk-unsplash.jpg') }}" alt="Modern Sofa" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Modern Sofa</h3>
@@ -169,9 +163,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/annie-spratt-CpF8oOfwuoY-unsplash.jpg') }}" alt="Table Lamp" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Table Lamp</h3>
@@ -183,9 +174,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/cgxl-media-7_HUWOnPoA4-unsplash.jpg') }}" alt="Office Chair" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Office Chair</h3>
@@ -197,9 +185,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/Minimalist C-Shaped Sofa Side Table – Modern Space-Saving End Table for Living Rooms.jpg') }}" alt="Coffee Table" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Coffee Table</h3>
@@ -211,9 +196,6 @@
                         <div class="product-card">
                             <div class="product-image">
                                 <img src="{{ asset('image/How to Make DIY Floating Shelves for a Minimalist Home 🧰✨.jpg') }}" alt="Wall Shelf" class="img-fluid">
-                                <div class="wishlist-icon">
-                                    <i class="far fa-heart"></i>
-                                </div>
                             </div>
                             <div class="product-info">
                                 <h3 class="product-title">Wall Shelf</h3>
@@ -230,7 +212,6 @@
             <div class="container">
                 <div class="section-header d-flex justify-content-between align-items-center">
                     <h2 class="section-title">SHOP THE SEASON</h2>
-                    <a href="#" class="view-all-link">EXPLORE OUR COLLECTION <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
 
                 <div class="row season-showcase">
@@ -297,7 +278,6 @@
                             <p class="highlight-text">
                                 Crafting perfect ambiance with carefully designed furniture that transforms your home into a sanctuary of comfort and beauty. Our designs blend functionality with aesthetic appeal, creating spaces that are both practical and visually captivating.
                             </p>
-                            <a href="#" class="explore-link">EXPLORE MORE <i class="fas fa-long-arrow-alt-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -404,32 +384,25 @@
                     </p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">SHOP</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Living Room</a></li>
-                        <li><a href="#">Kitchen</a></li>
-                        <li><a href="#">Bedroom</a></li>
-                        <li><a href="#">Home Office</a></li>
-                        <li><a href="#">New Arrivals</a></li>
+                    <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
+                    <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
+                    <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/storage') }}">Storage</a></li>
+                    <li><a href="{{ url('/laundry') }}">Laundry</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">LINKS</h3>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
@@ -447,10 +420,6 @@
                     <div class="col-md-6">
                         <p class="copyright">© 2025 FurniStyle. All Rights Reserved.</p>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <p class="made-by">MADE WITH LOVE</p>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>

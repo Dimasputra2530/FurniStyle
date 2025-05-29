@@ -175,67 +175,56 @@
             </section>
         </main>
 
-        <!-- Footer Section -->
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h3 class="footer-title">FurniStyle</h3>
-                        <p class="footer-text">
-                            Beautiful furniture for beautiful homes. Quality design that lasts a lifetime.
-                        </p>
-                        <div class="social-links">
-                            <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="text-decoration-none"><i class="fab fa-pinterest-p"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h3 class="footer-title">SHOP</h3>
-                        <ul class="footer-links">
-                            <li><a href="#" class="text-decoration-none">Living Room</a></li>
-                            <li><a href="#" class="text-decoration-none">Kitchen</a></li>
-                            <li><a href="#" class="text-decoration-none">Bedroom</a></li>
-                            <li><a href="#" class="text-decoration-none">Home Office</a></li>
-                            <li><a href="#" class="text-decoration-none">New Arrivals</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                        <h3 class="footer-title">LINKS</h3>
-                        <ul class="footer-links">
-                            <li><a href="#" class="text-decoration-none">About Us</a></li>
-                            <li><a href="#" class="text-decoration-none">Contact</a></li>
-                            <li><a href="#" class="text-decoration-none">FAQ</a></li>
-                            <li><a href="#" class="text-decoration-none">Terms & Conditions</a></li>
-                            <li><a href="#" class="text-decoration-none">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
-                        <h3 class="footer-title">CONTACT</h3>
-                        <ul class="footer-contact">
-                            <li><i class="fas fa-map-marker-alt"></i> Jln. Pangeran 12, Purwokerto</li>
-                            <li><i class="fas fa-phone"></i> +62 878-1765-3570</li>
-                            <li><i class="fas fa-envelope"></i> furnistyleidn@gmail.com</li>
-                        </ul>
+    <!-- footer section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">FurniStyle</h3>
+                    <p class="footer-text">
+                        Beautiful furniture for beautiful homes. Quality design that lasts a lifetime.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-bottom">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="copyright">© 2025 FurniStyle. All Rights Reserved.</p>
-                        </div>
-                        <div class="col-md-6 text-md-end">
-                            <p class="made-by">MADE WITH LOVE</p>
-                        </div>
-                    </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">SHOP</h3>
+                    <ul class="footer-links">
+                    <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
+                    <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
+                    <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/storage') }}">Storage</a></li>
+                    <li><a href="{{ url('/laundry') }}">Laundry</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h3 class="footer-title">LINKS</h3>
+                    <ul class="footer-links">
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">CONTACT</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Jln. Pangeran 12, Purwokerto</li>
+                        <li><i class="fas fa-phone"></i> +62 878-1765-3570</li>
+                        <li><i class="fas fa-envelope"></i> furnistyleidn@gmail.com</li>
+                    </ul>
                 </div>
             </div>
-        </footer>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="copyright">© 2025 FurniStyle. All Rights Reserved.</p>
+                    </div>
+            </div>
+        </div>
+    </footer>
 
         <!-- Bootstrap JS Bundle -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

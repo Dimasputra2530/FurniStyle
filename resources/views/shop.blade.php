@@ -13,6 +13,7 @@
     <!-- custom CSS -->
     <link rel="stylesheet" href="/css/shop.css">
     <script src="{{ asset('js/popupdetail.js') }}"></script>
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/png">
 </head>
 <body>
 <!-- header & navigation -->
@@ -73,32 +74,24 @@
                 <div class="sidebar-section">
                     <h3 class="sidebar-heading">MATERIAL</h3>
                     <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fa-solid fa-tree"></i> Wood</a></li>
-                        <li><a href="#"><i class="fa-solid fa-wine-glass"></i> Glass</a></li>
-                        <li><a href="#"><i class="fa-solid fa-shirt"></i> Fabric</a></li>
+                        <li><a href="{{ url('wood-shop') }}" class="active"><i class="fa-solid fa-tree"></i> Wood</a></li>
+                        <li><a href="{{ url('glass-shop') }}"><i class="fa-solid fa-wine-glass"></i> Glass</a></li>
+                        <li><a href="{{ url('fabric-shop') }}"><i class="fa-solid fa-shirt"></i> Fabric</a></li>
                     </ul>
                 </div>
                 
                 <div class="sidebar-section">
                     <h3 class="sidebar-heading">PACKAGE</h3>
                     <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fa-solid fa-tag"></i> BRAND</a></li>
-                        <li><a href="#"><i class="fa-solid fa-bed"></i> Bedroom</a></li>
-                        <li><a href="#"><i class="fa-solid fa-bath"></i> Bathroom</a></li>
-                        <li><a href="#"><i class="fa-solid fa-kitchen-set"></i> Kitchen Sets</a></li>
+                        <li><a href="{{ url('livingroom') }}"><i class="fa-solid fa-couch"></i> Living Room</a></li>
+                        <li><a href="{{ url('kitchen') }}"><i class="fa-solid fa-utensils"></i> Kitchen</a></li>
+                        <li><a href="{{ url('bedroom') }}"><i class="fa-solid fa-bed"></i> Bedroom</a></li>
+                        <li><a href="{{ url('homeoffice') }}"><i class="fa-solid fa-laptop-house"></i> Home Office</a></li>
+                        <li><a href="{{ url('storage') }}"><i class="fa-solid fa-boxes-stacked"></i> Storage</a></li>
+                        <li><a href="{{ url('laundry') }}"><i class="fa-solid fa-soap"></i> Laundry</a>
                     </ul>
                 </div>
                 
-                <div class="sidebar-section">
-                    <h3 class="sidebar-heading">CONTACT</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#"><i class="fa-solid fa-envelope"></i> Email</a></li>
-                    </ul>
-                </div>
-            </div>
-
             <!-- Product Grid -->
             <div class="col-lg-10">
                 <div class="container product-grid">
@@ -261,26 +254,8 @@
                         </div>
                     </div>
                     
-                    <!-- Pagination -->
-                    <div class="pagination-container">
-                        <div class="pagination">
-                            <a href="#" class="prev-page"><i class="fas fa-arrow-left"></i></a>
-                            <div class="page-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                            <a href="#" class="next-page"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-     <!-- Footer Section -->
+    <!-- footer section -->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -290,33 +265,26 @@
                         Beautiful furniture for beautiful homes. Quality design that lasts a lifetime.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">SHOP</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-decoration-none">Living Room</a></li>
-                        <li><a href="#" class="text-decoration-none">Kitchen</a></li>
-                        <li><a href="#" class="text-decoration-none">Bedroom</a></li>
-                        <li><a href="#" class="text-decoration-none">Home Office</a></li>
-                        <li><a href="#" class="text-decoration-none">New Arrivals</a></li>
+                    <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
+                    <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
+                    <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/storage') }}">Storage</a></li>
+                    <li><a href="{{ url('/laundry') }}">Laundry</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">LINKS</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-decoration-none">About Us</a></li>
-                        <li><a href="#" class="text-decoration-none">Contact</a></li>
-                        <li><a href="#" class="text-decoration-none">FAQ</a></li>
-                        <li><a href="#" class="text-decoration-none">Terms & Conditions</a></li>
-                        <li><a href="#" class="text-decoration-none">Privacy Policy</a></li>
-                    </ul>
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
@@ -334,10 +302,6 @@
                     <div class="col-md-6">
                         <p class="copyright">© 2025 FurniStyle. All Rights Reserved.</p>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <p class="made-by">MADE WITH LOVE</p>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
