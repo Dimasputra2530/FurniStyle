@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- custom CSS -->
     <link rel="stylesheet" href="/css/shop.css">
-    <script src="{{ asset('js/popupdetail.js') }}"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
 <!-- header & navigation -->
@@ -175,176 +176,258 @@
             <div class="col-lg-10">
                 <div class="container product-grid">
                     <div class="row">
-                        <!-- Product 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/burebeto-chair.jpg') }}"  alt="BERUBETTO CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>BERUBETTO CHAIR</h5>
-                                    <p class="price">$139</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 2 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>TOLA SOFA</h5>
-                                    <p class="price">$645</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 3 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>RIRAKKUSU CHAIR</h5>
-                                    <p class="price">$344</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 4 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>MOKUZAI TABLE</h5>
-                                    <p class="price">$200</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 5 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>OHARA LAMP</h5>
-                                    <p class="price">$99</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 6 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>MOKUZAI TABLE</h5>
-                                    <p class="price">$200</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 7 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>EGGHEAD LAMP</h5>
-                                    <p class="price">$99</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 8 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>SAKAZUKI SOFA</h5>
-                                    <p class="price">$250</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        <!-- Product 9 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>KUREHA CANDLE</h5>
-                                    <p class="price">$150</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 10 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>KUZAN SOFA</h5>
-                                    <p class="price">$200</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 11 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>INUARASHI CHAIR</h5>
-                                    <p class="price">$130</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 12 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>NEKOMAMUSHI CHAIR</h5>
-                                    <p class="price">$150</p>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- Product 1 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/burebeto-chair.jpg') }}" alt="BERUBETTO CHAIR" class="img-fluid">
                     </div>
-                    
-                    <!-- Pagination -->
-                    <div class="pagination-container">
-                        <div class="pagination">
-                            <a href="#" class="prev-page"><i class="fas fa-arrow-left"></i></a>
-                            <div class="page-dots">
-                                <span class="dot active"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div>
-                            <a href="#" class="next-page"><i class="fas fa-arrow-right"></i></a>
+                    <div class="product-info">
+                    <h5>BERUBETTO CHAIR</h5>
+                    <p class="price">$139</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="1"
+                            data-name="BERUBETTO CHAIR"
+                            data-price="139">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>TOLA SOFA</h5>
+                    <p class="price">$645</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="2"
+                            data-name="TOLA SOFA"
+                            data-price="645">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>RIRAKKUSU CHAIR</h5>
+                    <p class="price">$344</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="3"
+                            data-name="RIRAKKUSU CHAIR"
+                            data-price="344">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>MOKUZAI TABLE</h5>
+                    <p class="price">$200</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="4"
+                            data-name="MOKUZAI TABLE"
+                            data-price="200">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>OHARA LAMP</h5>
+                    <p class="price">$99</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="5"
+                            data-name="OHARA LAMP"
+                            data-price="99">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>MOKUZAI TABLE</h5>
+                    <p class="price">$200</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="6"
+                            data-name="MOKUZAI TABLE"
+                            data-price="200">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>EGGHEAD LAMP</h5>
+                    <p class="price">$99</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="7"
+                            data-name="EGGHEAD LAMP"
+                            data-price="99">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>SAKAZUKI SOFA</h5>
+                    <p class="price">$250</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="8"
+                            data-name="SAKAZUKI SOFA"
+                            data-price="250">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>KUREHA CANDLE</h5>
+                    <p class="price">$150</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="9"
+                            data-name="KUREHA CANDLE"
+                            data-price="150">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 10 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>KUZAN SOFA</h5>
+                    <p class="price">$200</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="10"
+                            data-name="KUZAN SOFA"
+                            data-price="200">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 11 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>INUARASHI CHAIR</h5>
+                    <p class="price">$130</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="11"
+                            data-name="INUARASHI CHAIR"
+                            data-price="130">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Product 12 -->
+                <div class="col-md-4 mb-4">
+                <div class="product-card">
+                    <div class="product-image">
+                    <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
+                    </div>
+                    <div class="product-info">
+                    <h5>NEKOMAMUSHI CHAIR</h5>
+                    <p class="price">$150</p>
+                    </div>
+                    <div class="action-buttons">
+                    <button class="btn btn-add-cart"
+                            data-id="12"
+                            data-name="NEKOMAMUSHI CHAIR"
+                            data-price="150">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                    </button>
+                    </div>
+                </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -473,6 +556,7 @@
                 <div class="action-buttons">
                   <button class="btn btn-add-cart"><i class="fas fa-shopping-cart me-2"></i>Order Now</button>
                 </div>
+
               </div>
             </div>
           </div>
@@ -752,17 +836,20 @@ document.addEventListener('DOMContentLoaded', function() {
         input.value = value + 1;
     });
     
-    // Add to Cart Button Animation
-    document.querySelector('.btn-add-cart')?.addEventListener('click', function() {
-        this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
-        this.classList.add('added');
-        
-        // Reset after 2 seconds
-        setTimeout(() => {
-            this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
-            this.classList.remove('added');
-        }, 2000);
+    // Add to Cart Button Animation for All Buttons
+    document.querySelectorAll('.btn-add-cart').forEach(function(button) {
+        button.addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+            this.classList.add('added');
+
+            // Reset after 2 seconds
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
+                this.classList.remove('added');
+            }, 2000);
+        });
     });
+
     
     // Wishlist Button Toggle
     document.querySelector('.btn-wishlist')?.addEventListener('click', function() {
@@ -779,11 +866,111 @@ document.addEventListener('DOMContentLoaded', function() {
 
  </script>
 
- <!-- baru -->
-
-<!-- JavaScript untuk Toggle antara Login dan Sign Up -->
+<!-- BARU INI -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Get CSRF token
+    const csrfMetaTag = document.querySelector('meta[name="csrf-token"]');
+    const csrfToken = csrfMetaTag ? csrfMetaTag.content : '';
+
+    // Fungsi adjustNavIcons (kalau kamu pakai ini)
+    function adjustNavIcons() {
+        const navIcons = document.querySelector('.nav-icons');
+        const searchBox = document.querySelector('.search-box');
+
+        if (window.innerWidth < 992) {
+            if (navIcons && searchBox) {
+                searchBox.style.display = 'none';
+            }
+        } else {
+            if (navIcons && searchBox) {
+                searchBox.style.display = 'block';
+            }
+        }
+    }
+    adjustNavIcons();
+    window.addEventListener('resize', adjustNavIcons);
+
+    // AJAX Function untuk Add to Cart
+    function addToCart(productId, quantity = 1) {
+        const formData = new FormData();
+        formData.append('product_id', productId);
+        formData.append('quantity', quantity);
+        formData.append('_token', csrfToken); // Ini penting untuk CSRF
+
+        return fetch('/cart/add', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Berhasil:', data);
+            
+            if (data.success) {
+                alert(data.message || 'Produk berhasil ditambahkan ke keranjang!');
+                return data;
+            } else {
+                throw new Error(data.message || 'Gagal menambahkan produk');
+            }
+        })
+        .catch(error => {
+            console.error('Gagal:', error);
+            alert('Gagal menambahkan ke keranjang: ' + error.message);
+            throw error;
+        });
+    }
+
+    // Order Now: Event listener untuk tombol Add to Cart
+    document.querySelectorAll('.btn-add-cart').forEach(button => {
+        button.addEventListener('click', function () {
+            const productId = this.dataset.id;
+            
+            // Disable button sementara
+            this.disabled = true;
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+
+            // Call AJAX function
+            addToCart(productId, 1)
+                .then(() => {
+                    // Animasi tombol Add to Cart
+                    this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+                    this.classList.add('added');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
+                        this.classList.remove('added');
+                        this.disabled = false;
+                    }, 2000);
+                })
+                .catch(() => {
+                    // Reset button on error
+                    this.innerHTML = originalText;
+                    this.disabled = false;
+                });
+        });
+    });
+
+    // Wishlist Button Toggle (bisa banyak tombol)
+    document.querySelectorAll('.btn-wishlist').forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.replace('far', 'fas');
+                this.style.color = '#ff5252';
+            } else {
+                icon.classList.replace('fas', 'far');
+                this.style.color = '';
+            }
+        });
+    });
+
+    // Toggle Login / Sign Up Form
     const toggleLoginForm = document.getElementById('toggleLoginForm');
     const formSignup = document.getElementById('form-signup');
     const formLogin = document.getElementById('form-login');
@@ -794,14 +981,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             if (formSignup.classList.contains('d-none')) {
-                // Show Sign Up, Hide Login
                 formSignup.classList.remove('d-none');
                 formLogin.classList.add('d-none');
                 modalTitle.textContent = 'Create your account';
                 toggleLoginForm.textContent = 'Sign in';
                 toggleLoginForm.previousSibling.textContent = 'Already have an account? ';
             } else {
-                // Show Login, Hide Sign Up
                 formLogin.classList.remove('d-none');
                 formSignup.classList.add('d-none');
                 modalTitle.textContent = 'Login to your account';
@@ -810,7 +995,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Make addToCart function global
+    window.addToCart = addToCart;
 });
+
 </script>
+
+
 </body>
 </html>

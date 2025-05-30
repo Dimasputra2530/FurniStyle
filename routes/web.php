@@ -2,30 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home'); // ← Ditambahkan nama 'home' di sini
+// ============================
+// Halaman Umum (dengan form signup/login duplikat di dalam)
+// ============================
+Route::get('/', fn () => view('home'))->name('home');
+Route::get('/shop', fn () => view('shop'))->name('shop');
+Route::get('/about', fn () => view('about'))->name('about');
 
-Route::get('/login', function () {
-    return view('LOGIN.login');
-})->name('login');
+// ============================
+// AUTH (hanya proses login/signup/logout, tanpa view signup khusus)
+// ============================
+Route::post('/signup', [AuthController::class, 'signup'])->middleware('guest')->name('signup');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->middleware('guest')->name('login');
+Route::post('/login', [AuthController::class, 'login'])->middleware('guest')->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout');
 
-Route::get('/signup', function () {
-    return view('LOGIN.signup'); 
-})->name('signup.form');
-
-Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
-Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
-
-Route::get('/shop', function () {
-    return view('shop');
+// ============================
+// HANYA untuk user login
+// ============================
+Route::middleware(['auth'])->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
+    Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/cart', function () {
-    return view('cart'); 
+// ============================
+// HANYA untuk admin login
+// ============================
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/dashboard', fn () => view('admin.dashboard'))->name('dashboard');
 });

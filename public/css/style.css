@@ -555,6 +555,7 @@
     color: var(--text-light);
     font-size: 0.95rem;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .button-outline {
@@ -645,6 +646,7 @@
     color: var(--text-light);
     margin-bottom: 25px;
     line-height: 1.8;
+    text-align: justify;
 }
 
 .explore-link {

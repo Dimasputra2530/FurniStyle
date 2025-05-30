@@ -18,10 +18,10 @@
     <div class="container py-4">
       <!-- Back Button -->
         <div class="mb-4">
-            <a href="{{ url()->previous() }}" class="back-button">
-                <i class="fas fa-arrow-left me-2"></i> Back
-            </a>
-        </div>
+        <a href="javascript:void(0)" onclick="goBack()" class="back-button">
+            <i class="fas fa-arrow-left me-2"></i> Back
+        </a>
+    </div>
 
         
         <!-- Shopping Cart Title -->
@@ -309,5 +309,17 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- buat tombol back -->
+    <script>
+    function goBack() {
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        // Fallback ke halaman default
+        window.location.href = '/products';
+    }
+}
+</script>
 </body>
 </html>
