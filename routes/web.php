@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 
 // ============================
 // Halaman Umum (dengan form signup/login duplikat di dalam)
@@ -35,4 +36,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', fn () => view('admin.dashboard'))->name('dashboard');
 });
 
-Route::post('/order', [OrderController::class, 'store']);
+Route::post('/orders', [OrderController::class, 'store']);
+

@@ -172,7 +172,7 @@ header {
 }
 
 .cart-icon::after {
-    content: '0';
+    /* content: '0'; */
     position: absolute;
     top: -8px;
     right: -8px;

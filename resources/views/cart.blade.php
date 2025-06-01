@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/cart.css">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
       <!-- header & navigation -->
@@ -214,11 +216,15 @@
             return;
         }
 
-        fetch("http://127.0.0.1:8000/order", {
+        console.log("Data cart yang dikirim:", cart);
+        alert(JSON.stringify(cart));
+
+        fetch("/orders", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Accept": "application/json"
+                "Accept": "application/json",
+                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             },
             body: JSON.stringify({ cart: cart })
         })
@@ -239,11 +245,7 @@
         });
     }
 
-    // Jalankan saat halaman selesai dimuat
     document.addEventListener("DOMContentLoaded", renderCart);
-
-    console.log("Data cart yang dikirim:", cart);
-    alert(JSON.stringify(cart));
 </script>
 
 </body>
