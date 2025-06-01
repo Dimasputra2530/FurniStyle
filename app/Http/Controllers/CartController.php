@@ -104,4 +104,14 @@ class CartController extends Controller
         $cartItems = CartItem::with('product')->where('user_id', $userId)->get();
         return view('cart', compact('cartItems'));
     }
+
+    public function addToCart(Request $request)
+    {
+    // Validasi atau logika insert cart
+    return response()->json([
+        'success' => true,
+        'message' => 'Produk berhasil ditambahkan ke keranjang.'
+    ]);
+    }
+
 }

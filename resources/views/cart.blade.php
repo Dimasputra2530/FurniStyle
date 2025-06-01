@@ -22,8 +22,6 @@
             <i class="fas fa-arrow-left me-2"></i> Back
         </a>
     </div>
-
-        
         <!-- Shopping Cart Title -->
         <h2 class="shopping-cart-title">Shopping Cart</h2>
         

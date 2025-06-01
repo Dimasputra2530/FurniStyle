@@ -892,69 +892,258 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', adjustNavIcons);
 
     // AJAX Function untuk Add to Cart
-    function addToCart(productId, quantity = 1) {
-        const formData = new FormData();
-        formData.append('product_id', productId);
-        formData.append('quantity', quantity);
-        formData.append('_token', csrfToken); // Ini penting untuk CSRF
+    f// Pastikan CSRF token tersedia
+let csrfToken;
+try {
+    // Coba ambil dari meta tag
+    const metaToken = document.querySelector('meta[name="csrf-token"]');
+    if (metaToken) {
+        csrfToken = metaToken.getAttribute('content');
+    } else {
+        // Alternatif: ambil dari form tersembunyi
+        const hiddenInput = document.querySelector('input[name="_token"]');
+        csrfToken = hiddenInput ? hiddenInput.value : '';
+    }
+} catch (error) {
+    console.warn('CSRF token tidak ditemukan:', error);
+    csrfToken = '';
+}
 
-        return fetch('/cart/add', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Berhasil:', data);
-            
-            if (data.success) {
-                alert(data.message || 'Produk berhasil ditambahkan ke keranjang!');
-                return data;
-            } else {
-                throw new Error(data.message || 'Gagal menambahkan produk');
-            }
-        })
-        .catch(error => {
-            console.error('Gagal:', error);
-            alert('Gagal menambahkan ke keranjang: ' + error.message);
-            throw error;
-        });
+// AJAX Function untuk Add to Cart
+function addToCart(productData) {
+    // Validasi input
+    if (!productData.id) {
+        throw new Error('Product ID is required');
     }
 
-    // Order Now: Event listener untuk tombol Add to Cart
-    document.querySelectorAll('.btn-add-cart').forEach(button => {
-        button.addEventListener('click', function () {
-            const productId = this.dataset.id;
+    if (!csrfToken) {
+        throw new Error('CSRF token tidak tersedia');
+    }
+
+    const formData = new FormData();
+    formData.append('product_id', productData.id);
+    formData.append('product_name', productData.name);
+    formData.append('product_price', productData.price);
+    formData.append('quantity', productData.quantity || 1);
+    formData.append('_token', csrfToken);
+
+    return fetch('/cart/add', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        // Cek content type
+        const contentType = response.headers.get('content-type');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Pastikan response adalah JSON
+        if (contentType && contentType.includes('application/json')) {
+            return response.json();
+        } else {
+            // Jika bukan JSON, baca sebagai text untuk debugging
+            return response.text().then(text => {
+                console.warn('Response bukan JSON:', text);
+                throw new Error('Server response bukan JSON yang valid');
+            });
+        }
+    })
+    .then(data => {
+        console.log('Response berhasil:', data);
+        
+        if (data && data.success) {
+            // Update cart count jika ada
+            updateCartCount();
+            return data;
+        } else {
+            throw new Error(data?.message || 'Gagal menambahkan produk ke keranjang');
+        }
+    })
+    .catch(error => {
+        console.error('Error dalam addToCart:', error);
+        throw error;
+    });
+}
+
+// Fungsi untuk reset button state
+function resetButton(button, originalText) {
+    button.innerHTML = originalText;
+    button.disabled = false;
+    button.classList.remove('loading', 'added');
+}
+
+// Fungsi untuk set loading state
+function setLoadingState(button) {
+    button.disabled = true;
+    button.classList.add('loading');
+    button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+}
+
+// Fungsi untuk set success state
+function setSuccessState(button, originalText) {
+    button.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+    button.classList.remove('loading');
+    button.classList.add('added');
+    
+    setTimeout(() => {
+        resetButton(button, originalText);
+    }, 2000);
+}
+
+// Event listener untuk tombol Add to Cart
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+    
+    if (addToCartButtons.length === 0) {
+        console.warn('Tidak ada tombol .btn-add-cart ditemukan');
+        return;
+    }
+
+    console.log(`Ditemukan ${addToCartButtons.length} tombol Add to Cart`);
+
+    addToCartButtons.forEach(button => {
+        // Simpan text original
+        const originalText = button.innerHTML;
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior
             
-            // Disable button sementara
-            this.disabled = true;
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+            // Ambil data produk dari data attributes
+            const productData = {
+                id: this.dataset.id || this.getAttribute('data-id'),
+                name: this.dataset.name || this.getAttribute('data-name'),
+                price: this.dataset.price || this.getAttribute('data-price'),
+                quantity: 1
+            };
+            
+            console.log('Product data:', productData);
+            
+            if (!productData.id) {
+                alert('Product ID tidak ditemukan');
+                return;
+            }
+
+            if (!productData.name) {
+                alert('Product name tidak ditemukan');
+                return;
+            }
+
+            if (!productData.price) {
+                alert('Product price tidak ditemukan');
+                return;
+            }
+
+            // Set loading state
+            setLoadingState(this);
 
             // Call AJAX function
-            addToCart(productId, 1)
-                .then(() => {
-                    // Animasi tombol Add to Cart
-                    this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
-                    this.classList.add('added');
+            addToCart(productData)
+                .then((data) => {
+                    // Tampilkan pesan sukses
+                    const message = data.message || `${productData.name} berhasil ditambahkan ke keranjang!`;
+                    showNotification(message, 'success');
                     
-                    setTimeout(() => {
-                        this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
-                        this.classList.remove('added');
-                        this.disabled = false;
-                    }, 2000);
+                    // Set success state
+                    setSuccessState(this, originalText);
                 })
-                .catch(() => {
-                    // Reset button on error
-                    this.innerHTML = originalText;
-                    this.disabled = false;
+                .catch((error) => {
+                    // Reset button state
+                    resetButton(this, originalText);
+                    
+                    // Tampilkan error message
+                    const errorMessage = `Gagal menambahkan ${productData.name} ke keranjang: ${error.message}`;
+                    showNotification(errorMessage, 'error');
                 });
         });
     });
+});
+
+// Tambahan: Fungsi untuk update cart count (jika ada)
+function updateCartCount() {
+    fetch('/cart/count', {
+        method: 'GET',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const cartCountElement = document.querySelector('.cart-count');
+        if (cartCountElement && data.count !== undefined) {
+            cartCountElement.textContent = data.count;
+            // Animasi cart count
+            cartCountElement.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartCountElement.style.transform = 'scale(1)';
+            }, 200);
+        }
+    })
+    .catch(error => {
+        console.warn('Gagal update cart count:', error);
+    });
+}
+
+// Fungsi untuk menampilkan notifikasi
+function showNotification(message, type = 'info') {
+    // Cek apakah ada toast container
+    let toastContainer = document.querySelector('.toast-container');
+    
+    if (!toastContainer) {
+        // Buat toast container jika belum ada
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container position-fixed top-0 end-0 p-3';
+        toastContainer.style.zIndex = '9999';
+        document.body.appendChild(toastContainer);
+    }
+
+    // Buat toast element
+    const toastId = 'toast-' + Date.now();
+    const toastHTML = `
+        <div id="${toastId}" class="toast align-items-center text-white bg-${type === 'success' ? 'success' : 'danger'} border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} me-2"></i>
+                    ${message}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    `;
+
+    toastContainer.insertAdjacentHTML('beforeend', toastHTML);
+    
+    const toastElement = document.getElementById(toastId);
+    
+    // Jika Bootstrap toast tersedia
+    if (typeof bootstrap !== 'undefined' && bootstrap.Toast) {
+        const toast = new bootstrap.Toast(toastElement, {
+            autohide: true,
+            delay: 3000
+        });
+        toast.show();
+        
+        // Hapus element setelah selesai
+        toastElement.addEventListener('hidden.bs.toast', () => {
+            toastElement.remove();
+        });
+    } else {
+        // Fallback jika Bootstrap tidak tersedia
+        toastElement.style.display = 'block';
+        setTimeout(() => {
+            toastElement.style.opacity = '0';
+            setTimeout(() => {
+                toastElement.remove();
+            }, 300);
+        }, 3000);
+    }
+}
 
     // Wishlist Button Toggle (bisa banyak tombol)
     document.querySelectorAll('.btn-wishlist').forEach(button => {
