@@ -178,262 +178,233 @@
                     <div class="row">
 
                 <!-- Product 1 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/burebeto-chair.jpg') }}" alt="BERUBETTO CHAIR" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>BERUBETTO CHAIR</h5>
-                    <p class="price">$139</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="1"
-                            data-name="BERUBETTO CHAIR"
-                            data-price="139">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>TOLA SOFA</h5>
-                    <p class="price">$645</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="2"
-                            data-name="TOLA SOFA"
-                            data-price="645">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>RIRAKKUSU CHAIR</h5>
-                    <p class="price">$344</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="3"
-                            data-name="RIRAKKUSU CHAIR"
-                            data-price="344">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>MOKUZAI TABLE</h5>
-                    <p class="price">$200</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="4"
-                            data-name="MOKUZAI TABLE"
-                            data-price="200">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>OHARA LAMP</h5>
-                    <p class="price">$99</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="5"
-                            data-name="OHARA LAMP"
-                            data-price="99">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>MOKUZAI TABLE</h5>
-                    <p class="price">$200</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="6"
-                            data-name="MOKUZAI TABLE"
-                            data-price="200">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 7 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>EGGHEAD LAMP</h5>
-                    <p class="price">$99</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="7"
-                            data-name="EGGHEAD LAMP"
-                            data-price="99">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>SAKAZUKI SOFA</h5>
-                    <p class="price">$250</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="8"
-                            data-name="SAKAZUKI SOFA"
-                            data-price="250">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 9 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>KUREHA CANDLE</h5>
-                    <p class="price">$150</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="9"
-                            data-name="KUREHA CANDLE"
-                            data-price="150">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 10 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>KUZAN SOFA</h5>
-                    <p class="price">$200</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="10"
-                            data-name="KUZAN SOFA"
-                            data-price="200">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 11 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>INUARASHI CHAIR</h5>
-                    <p class="price">$130</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="11"
-                            data-name="INUARASHI CHAIR"
-                            data-price="130">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Product 12 -->
-                <div class="col-md-4 mb-4">
-                <div class="product-card">
-                    <div class="product-image">
-                    <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
-                    </div>
-                    <div class="product-info">
-                    <h5>NEKOMAMUSHI CHAIR</h5>
-                    <p class="price">$150</p>
-                    </div>
-                    <div class="action-buttons">
-                    <button class="btn btn-add-cart"
-                            data-id="12"
-                            data-name="NEKOMAMUSHI CHAIR"
-                            data-price="150">
-                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-                    </button>
-                    </div>
-                </div>
-                </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/burebeto-chair.jpg') }}" alt="BERUBETTO CHAIR" class="img-fluid">
     </div>
+    <div class="product-info">
+      <h5>BERUBETTO CHAIR</h5>
+      <p class="price">$139</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('BERUBETTO CHAIR', 139, '{{ asset('/image shop/burebeto-chair.jpg') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 2 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>TOLA SOFA</h5>
+      <p class="price">$645</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('TOLA SOFA', 645, '{{ asset('/image shop/tola-sofa.jpg') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 3 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>RIRAKKUSU CHAIR</h5>
+      <p class="price">$344</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('RIRAKKUSU CHAIR', 344, '{{ asset('/image shop/rirakuru-chair.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 4 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>MOKUZAI TABLE</h5>
+      <p class="price">$200</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('MOKUZAI TABLE', 200, '{{ asset('/image shop/mokuzai-table.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 5 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>OHARA LAMP</h5>
+      <p class="price">$99</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('OHARA LAMP', 99, '{{ asset('/image shop/ohara-lamp.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 6 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>MOKUZAI TABLE</h5>
+      <p class="price">$200</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('MOKUZAI TABLE', 200, '{{ asset('image shop/mokuzai-chair.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 7 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>EGGHEAD LAMP</h5>
+      <p class="price">$99</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('EGGHEAD LAMP', 99, '{{ asset('/image shop/egghead-lamp.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 8 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>SAKAZUKI SOFA</h5>
+      <p class="price">$250</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('SAKAZUKI SOFA', 250, '{{ asset('/image shop/sakazuki-chair.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 9 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>KUREHA CANDLE</h5>
+      <p class="price">$150</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('KUREHA CANDLE', 150, '{{ asset('/image shop/kureha-candle.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 10 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>KUZAN SOFA</h5>
+      <p class="price">$200</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('KUZAN SOFA', 200, '{{ asset('/image shop/kuzan-sofa.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 11 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>INUARASHI CHAIR</h5>
+      <p class="price">$130</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('INUARASHI CHAIR', 130, '{{ asset('/image shop/inurashi-chair.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Product 12 -->
+<div class="col-md-4 mb-4">
+  <div class="product-card">
+    <div class="product-image">
+      <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
+    </div>
+    <div class="product-info">
+      <h5>NEKOMAMUSHI CHAIR</h5>
+      <p class="price">$150</p>
+    </div>
+    <div class="action-buttons">
+      <button class="btn btn-add-cart"
+              onclick="addToCart('NEKOMAMUSHI CHAIR', 150, '{{ asset('/image shop/nekomomushi-chair.png') }}')">
+        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
 
      <!-- Footer Section -->
     <footer class="site-footer">
@@ -1189,6 +1160,36 @@ function showNotification(message, type = 'info') {
     window.addToCart = addToCart;
 });
 
+function addToCart(name, price, image) {
+  const product = { name, price, image };
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${name} has been added to your cart!`);
+}
+
+</script>
+
+<script>
+  function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Cek apakah item sudah ada
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        name: name,
+        price: price,
+        image: image,
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Produk ditambahkan ke keranjang!");
+  }
 </script>
 
 

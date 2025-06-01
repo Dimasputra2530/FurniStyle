@@ -34,3 +34,5 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/dashboard', fn () => view('admin.dashboard'))->name('dashboard');
 });
+
+Route::post('/order', [OrderController::class, 'store']);
