@@ -30,7 +30,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/home') }}">HOME</a>
+                            <a class="nav-link" href="{{ url('/home') }}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/shop') }}">SHOP</a>
@@ -39,7 +39,7 @@
                             <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/layouts') }}">LAYOUTS</a>
+                            <a class="nav-link active" href="{{ url('/layouts') }}">LAYOUTS</a>
                         </li>
                     </ul>
                     
