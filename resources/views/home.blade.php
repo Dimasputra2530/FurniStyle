@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">HOME</a>
+                            <a class="nav-link active" href="{{ url('/home') }}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/shop') }}">SHOP</a>
@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">COLLECTION</a>
+                            <a class="nav-link" href="{{ url('/layouts') }}">LAYOUTS</a>
                         </li>
                     </ul>
                     
@@ -207,30 +207,44 @@
             </div>
         </section>
 
-        <!-- season section -->
-        <section id="season" class="section">
+        <!-- ===== SEASON SECTION ===== -->
+         <!-- JS NYA KU NAMAI SEASON  -->
+        <section class="section season-section">
             <div class="container">
                 <div class="section-header d-flex justify-content-between align-items-center">
-                    <h2 class="section-title">SHOP THE SEASON</h2>
+                <h2 class="section-title">LAYOUTS</h2>
                 </div>
+                
+                <div class="season-container position-relative">
+                <!-- tombol scroll -->
+                <button class="scroll-btn scroll-btn-left" onclick="scrollSeason('left')">‹</button>
+                <button class="scroll-btn scroll-btn-right" onclick="scrollSeason('right')">›</button>
 
-                <div class="row season-showcase">
+                <!-- wrapper yang bisa discroll -->
+                <div class="row season-showcase flex-nowrap overflow-auto">
+                    <!-- item 1 -->
                     <div class="col-md-6 mb-4">
-                        <div class="season-image-large">
-                            <img src="{{ asset('image/spacejoy-umAXneH4GhA-unsplash.jpg') }}" alt="Living Room Season" class="img-fluid">
-                        </div>
+                    <div class="season-image-large">
+                        <img src="{{ asset('image/spacejoy-umAXneH4GhA-unsplash.jpg') }}"
+                            alt="Living Room Season" class="img-fluid">
                     </div>
+                    </div>
+                    <!-- item 2 -->
                     <div class="col-md-6 mb-4">
-                        <div class="season-image-large">
-                            <img src="{{ asset('image/sven-brandsma-3hEGHI4b4gg-unsplash.jpg') }}" alt="Kitchen Season" class="img-fluid">
-                        </div>
+                    <div class="season-image-large">
+                        <img src="{{ asset('image/sven-brandsma-3hEGHI4b4gg-unsplash.jpg') }}"
+                            alt="Kitchen Season" class="img-fluid">
+                    </div>
+                    </div>
+                    <div class="season-image-large">
+                        <img src="{{ asset('image/sven-brandsma-3hEGHI4b4gg-unsplash.jpg') }}"
+                            alt="Kitchen Season" class="img-fluid">
                     </div>
                 </div>
-                <div class="season-navigation">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="season-image-large">
+                        <img src="{{ asset('image/sven-brandsma-3hEGHI4b4gg-unsplash.jpg') }}"
+                            alt="Kitchen Season" class="img-fluid">
+                    </div>
                 </div>
             </div>
         </section>
@@ -505,7 +519,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- JavaScript Interaktif -->
-<script>
+<scrip>
 document.addEventListener('DOMContentLoaded', function () {
   const userIcon = document.querySelector('.profile-circle');
   const toggleLink = document.getElementById('toggleLoginForm');
@@ -541,9 +555,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-</script>
 
-    </script>
+<!-- Season -->
+  function scrollSeason(direction) {
+    const showcase = document.querySelector('.season-section .season-showcase');
+    const distance = showcase.clientWidth * 0.8;
+    showcase.scrollBy({
+      left: direction === 'left' ? -distance : distance,
+      behavior: 'smooth'
+    });
+  }
+
+</script>
     
 </body>
 </html>

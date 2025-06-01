@@ -28,19 +28,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-           <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">HOME</a>
+                            <a class="nav-link active" href="{{ url('/home') }}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{ url('/shop') }}">SHOP</a>
+                            <a class="nav-link" href="{{ url('/shop') }}">SHOP</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">COLLECTION</a>
+                            <a class="nav-link" href="{{ url('/layouts') }}">LAYOUTS</a>
                         </li>
                     </ul>
                 
@@ -266,7 +266,7 @@
                     </p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/furnistyle.idn?igsh=M2RoNmZiM3FtaDlx"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
@@ -276,6 +276,7 @@
                     <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
                     <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
                     <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/homeoffice') }}">Home Office</a></li>
                     <li><a href="{{ url('/storage') }}">Storage</a></li>
                     <li><a href="{{ url('/laundry') }}">Laundry</a></li>
                     </ul>

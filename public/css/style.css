@@ -549,6 +549,40 @@
     border-radius: 10px;
 }
 
+/* ===== SEASON SECTION HORIZONTAL SCROLL ===== */
+.season-section .season-container {
+  position: relative;
+}
+
+.season-section .season-showcase {
+  display: flex;               /* flex container */
+  flex-wrap: nowrap;           /* jangan bungkus */
+  overflow-x: auto;            /* scroll horizontal */
+  scroll-behavior: smooth;     /* animasi smooth */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* sembunyikan scrollbar di WebKit */
+.season-section .season-showcase::-webkit-scrollbar {
+  display: none;
+}
+
+/* styling tombol panah */
+.season-section .scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.season-section .scroll-btn-left  { left: 10px; }
+.season-section .scroll-btn-right { right: 10px; }
+
 /* ===== ABOUT SECTION ===== */
 .about-text {
     margin-bottom: 25px;

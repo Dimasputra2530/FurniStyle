@@ -16,52 +16,53 @@
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/png">
 </head>
 <body>
-<!-- header & navigation -->
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="brand-text">FurniStyle</span>
-            </a>
+    <!-- header & navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <span class="brand-text">FurniStyle</span>
+                </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="shop.html">SHOP</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">COLLECTION</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-icons d-flex align-items-center">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search items...">
-                        <button><i class="fas fa-search"></i></button>
-                    </div>
-                    <a href="cart.html" class="icon-link cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </a>
-                    <a href="#" class="icon-link">
-                        <div class="profile-circle">
-                            <i class="fas fa-user"></i>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ url('/home') }}">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/shop') }}">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/layouts') }}">LAYOUTS</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-icons d-flex align-items-center">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search items...">
+                            <button><i class="fas fa-search"></i></button>
                         </div>
-                    </a>
+                        </a>
+                        <a href="{{ url('/cart') }}" class="icon-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <a href="#" class="icon-link">
+                            <div class="profile-circle">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
     <!-- Main Content -->
     <div class="container-fluid px-0">
@@ -90,61 +91,10 @@
                 </div>
             </div>
 
-            <!-- Product Grid -->
-            <div class="col-lg-10">
-                <div class="container product-grid">
-                    <div class="row">
-                        <!-- Product 1 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="" alt="BERUBETTO CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>BERUBETTO CHAIR</h5>
-                                    <p class="price">$139</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 2 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="" alt="TOLA SOFA" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>TOLA SOFA</h5>
-                                    <p class="price">$645</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 3 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="" alt="RIRAKKUSU CHAIR" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>RIRAKKUSU CHAIR</h5>
-                                    <p class="price">$344</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Product 4 -->
-                        <div class="col-md-4 mb-4">
-                            <div class="product-card">
-                                <div class="product-image">
-                                    <img src="" alt="MOKUZAI TABLE" class="img-fluid">
-                                </div>
-                                <div class="product-info">
-                                    <h5>MOKUZAI TABLE</h5>
-                                    <p class="price">$200</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-10 d-flex align-items-center justify-content-center" 
+                style="min-height: calc(100vh - 78px);">
+                <h1>Stock Not Available</h1>
+            </div>
                         </div>
                     </div>
                 </div>
@@ -173,6 +123,7 @@
                     <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
                     <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
                     <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/homeoffice') }}">Home Office</a></li>
                     <li><a href="{{ url('/storage') }}">Storage</a></li>
                     <li><a href="{{ url('/laundry') }}">Laundry</a></li>
                     </ul>
