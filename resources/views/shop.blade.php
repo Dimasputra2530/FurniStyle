@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/css/shop.css">
     <script src="{{ asset('js/popupdetail.js') }}"></script>
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/png">
+
 </head>
 <body>
 <!-- header & navigation -->
@@ -59,12 +60,84 @@
                         </div>
                     </a>
 
-
                 </div>
             </div>
         </div>
     </nav>
 </header>
+
+<!-- Modal Login & Sign Up untuk Shop -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" style="border-radius: 15px; overflow: hidden;">
+      <div class="d-flex flex-row">
+        <!-- Left: Form Area -->
+        <div class="col-md-6 p-5">
+          <div class="modal-header border-0 p-0 mb-3">
+            <h5 class="modal-title fw-bold text-success" id="authModalLabel">Login to your account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <button class="btn btn-outline-secondary w-100 mb-3">
+            <i class="bi bi-google me-2"></i> Login with Google
+          </button>
+
+          <div class="text-center my-2 text-muted">— or —</div>
+
+          <!-- Form Sign Up -->
+          <form id="form-signup" action="{{ route('signup') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+              <label class="form-check-label" for="terms">
+                I agree to all Terms, Privacy Policy and Fees
+              </label>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Sign Up</button>
+          </form>
+
+          <!-- Form Login -->
+          <form id="form-login" action="{{ route('login') }}" method="POST" class="d-none">
+            @csrf
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="login-email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Login</button>
+          </form>
+
+          <div class="text-center mt-3">
+            <small>Already have an account? <a href="#" id="toggleLoginForm">Sign up</a></small>
+          </div>
+        </div>
+
+        <!-- Right: Image Area -->
+        <div class="col-md-6 d-none d-md-block" style="background: url('/image/Rectangle 9 (1).png') center center / cover no-repeat;">
+          <div class="h-100 d-flex align-items-center justify-content-center text-white p-4" style="background-color: rgba(0,0,0,0.4);">
+            <h4 class="text-center">Discovering the Best Furniture for Your Home</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- Main Content -->
     <div class="container-fluid px-0">
@@ -254,7 +327,6 @@
                         </div>
                     </div>
                     
-
     <!-- footer section -->
     <footer class="site-footer">
         <div class="container">
@@ -366,6 +438,7 @@
                 <div class="action-buttons">
                   <button class="btn btn-add-cart"><i class="fas fa-shopping-cart me-2"></i>Order Now</button>
                 </div>
+
               </div>
             </div>
           </div>
@@ -379,9 +452,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
     <script>
-        // JavaScript for HomeLoft Website
 
-document.addEventListener('DOMContentLoaded', function() {
+    // JavaScript for HomeLoft Website
+    document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -645,17 +718,20 @@ document.addEventListener('DOMContentLoaded', function() {
         input.value = value + 1;
     });
     
-    // Add to Cart Button Animation
-    document.querySelector('.btn-add-cart')?.addEventListener('click', function() {
-        this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
-        this.classList.add('added');
-        
-        // Reset after 2 seconds
-        setTimeout(() => {
-            this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
-            this.classList.remove('added');
-        }, 2000);
+    // Add to Cart Button Animation for All Buttons
+    document.querySelectorAll('.btn-add-cart').forEach(function(button) {
+        button.addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+            this.classList.add('added');
+
+            // Reset after 2 seconds
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-shopping-cart me-2"></i>Add to Cart';
+                this.classList.remove('added');
+            }, 2000);
+        });
     });
+
     
     // Wishlist Button Toggle
     document.querySelector('.btn-wishlist')?.addEventListener('click', function() {
@@ -672,82 +748,300 @@ document.addEventListener('DOMContentLoaded', function() {
 
  </script>
 
- <!-- baru -->
-<!-- Modal Login & Sign Up untuk Shop -->
-<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content" style="border-radius: 15px; overflow: hidden;">
-      <div class="d-flex flex-row">
-        <!-- Left: Form Area -->
-        <div class="col-md-6 p-5">
-          <div class="modal-header border-0 p-0 mb-3">
-            <h5 class="modal-title fw-bold text-success" id="authModalLabel">Login to your account</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <button class="btn btn-outline-secondary w-100 mb-3">
-            <i class="bi bi-google me-2"></i> Login with Google
-          </button>
-
-          <div class="text-center my-2 text-muted">— or —</div>
-
-          <!-- Form Sign Up -->
-          <form id="form-signup" action="{{ route('signup') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
-              <label class="form-check-label" for="terms">
-                I agree to all Terms, Privacy Policy and Fees
-              </label>
-            </div>
-            <button type="submit" class="btn btn-success w-100">Sign Up</button>
-          </form>
-
-          <!-- Form Login -->
-          <form id="form-login" action="{{ route('login') }}" method="POST" class="d-none">
-            @csrf
-            <div class="mb-3">
-              <label for="login-email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="login-email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="mb-3">
-              <label for="login-password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="login-password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="btn btn-success w-100">Login</button>
-          </form>
-
-          <div class="text-center mt-3">
-            <small>Already have an account? <a href="#" id="toggleLoginForm">Sign up</a></small>
-          </div>
-        </div>
-
-        <!-- Right: Image Area -->
-        <div class="col-md-6 d-none d-md-block" style="background: url('/image/Rectangle 9 (1).png') center center / cover no-repeat;">
-          <div class="h-100 d-flex align-items-center justify-content-center text-white p-4" style="background-color: rgba(0,0,0,0.4);">
-            <h4 class="text-center">Discovering the Best Furniture for Your Home</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- JavaScript untuk Toggle antara Login dan Sign Up -->
+<!-- BARU INI -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Get CSRF token
+    const csrfMetaTag = document.querySelector('meta[name="csrf-token"]');
+    const csrfToken = csrfMetaTag ? csrfMetaTag.content : '';
+
+    // Fungsi adjustNavIcons (kalau kamu pakai ini)
+    function adjustNavIcons() {
+        const navIcons = document.querySelector('.nav-icons');
+        const searchBox = document.querySelector('.search-box');
+
+        if (window.innerWidth < 992) {
+            if (navIcons && searchBox) {
+                searchBox.style.display = 'none';
+            }
+        } else {
+            if (navIcons && searchBox) {
+                searchBox.style.display = 'block';
+            }
+        }
+    }
+    adjustNavIcons();
+    window.addEventListener('resize', adjustNavIcons);
+
+    // AJAX Function untuk Add to Cart
+    f// Pastikan CSRF token tersedia
+let csrfToken;
+try {
+    // Coba ambil dari meta tag
+    const metaToken = document.querySelector('meta[name="csrf-token"]');
+    if (metaToken) {
+        csrfToken = metaToken.getAttribute('content');
+    } else {
+        // Alternatif: ambil dari form tersembunyi
+        const hiddenInput = document.querySelector('input[name="_token"]');
+        csrfToken = hiddenInput ? hiddenInput.value : '';
+    }
+} catch (error) {
+    console.warn('CSRF token tidak ditemukan:', error);
+    csrfToken = '';
+}
+
+// AJAX Function untuk Add to Cart
+function addToCart(productData) {
+    // Validasi input
+    if (!productData.id) {
+        throw new Error('Product ID is required');
+    }
+
+    if (!csrfToken) {
+        throw new Error('CSRF token tidak tersedia');
+    }
+
+    const formData = new FormData();
+    formData.append('product_id', productData.id);
+    formData.append('product_name', productData.name);
+    formData.append('product_price', productData.price);
+    formData.append('quantity', productData.quantity || 1);
+    formData.append('_token', csrfToken);
+
+    return fetch('/cart/add', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        // Cek content type
+        const contentType = response.headers.get('content-type');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Pastikan response adalah JSON
+        if (contentType && contentType.includes('application/json')) {
+            return response.json();
+        } else {
+            // Jika bukan JSON, baca sebagai text untuk debugging
+            return response.text().then(text => {
+                console.warn('Response bukan JSON:', text);
+                throw new Error('Server response bukan JSON yang valid');
+            });
+        }
+    })
+    .then(data => {
+        console.log('Response berhasil:', data);
+        
+        if (data && data.success) {
+            // Update cart count jika ada
+            updateCartCount();
+            return data;
+        } else {
+            throw new Error(data?.message || 'Gagal menambahkan produk ke keranjang');
+        }
+    })
+    .catch(error => {
+        console.error('Error dalam addToCart:', error);
+        throw error;
+    });
+}
+
+// Fungsi untuk reset button state
+function resetButton(button, originalText) {
+    button.innerHTML = originalText;
+    button.disabled = false;
+    button.classList.remove('loading', 'added');
+}
+
+// Fungsi untuk set loading state
+function setLoadingState(button) {
+    button.disabled = true;
+    button.classList.add('loading');
+    button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+}
+
+// Fungsi untuk set success state
+function setSuccessState(button, originalText) {
+    button.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+    button.classList.remove('loading');
+    button.classList.add('added');
+    
+    setTimeout(() => {
+        resetButton(button, originalText);
+    }, 2000);
+}
+
+// Event listener untuk tombol Add to Cart
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartButtons = document.querySelectorAll('.btn-add-cart');
+    
+    if (addToCartButtons.length === 0) {
+        console.warn('Tidak ada tombol .btn-add-cart ditemukan');
+        return;
+    }
+
+    console.log(`Ditemukan ${addToCartButtons.length} tombol Add to Cart`);
+
+    addToCartButtons.forEach(button => {
+        // Simpan text original
+        const originalText = button.innerHTML;
+        
+        button.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default behavior
+            
+            // Ambil data produk dari data attributes
+            const productData = {
+                id: this.dataset.id || this.getAttribute('data-id'),
+                name: this.dataset.name || this.getAttribute('data-name'),
+                price: this.dataset.price || this.getAttribute('data-price'),
+                quantity: 1
+            };
+            
+            console.log('Product data:', productData);
+            
+            if (!productData.id) {
+                alert('Product ID tidak ditemukan');
+                return;
+            }
+
+            if (!productData.name) {
+                alert('Product name tidak ditemukan');
+                return;
+            }
+
+            if (!productData.price) {
+                alert('Product price tidak ditemukan');
+                return;
+            }
+
+            // Set loading state
+            setLoadingState(this);
+
+            // Call AJAX function
+            addToCart(productData)
+                .then((data) => {
+                    // Tampilkan pesan sukses
+                    const message = data.message || `${productData.name} berhasil ditambahkan ke keranjang!`;
+                    showNotification(message, 'success');
+                    
+                    // Set success state
+                    setSuccessState(this, originalText);
+                })
+                .catch((error) => {
+                    // Reset button state
+                    resetButton(this, originalText);
+                    
+                    // Tampilkan error message
+                    const errorMessage = `Gagal menambahkan ${productData.name} ke keranjang: ${error.message}`;
+                    showNotification(errorMessage, 'error');
+                });
+        });
+    });
+});
+
+// Tambahan: Fungsi untuk update cart count (jika ada)
+function updateCartCount() {
+    fetch('/cart/count', {
+        method: 'GET',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const cartCountElement = document.querySelector('.cart-count');
+        if (cartCountElement && data.count !== undefined) {
+            cartCountElement.textContent = data.count;
+            // Animasi cart count
+            cartCountElement.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartCountElement.style.transform = 'scale(1)';
+            }, 200);
+        }
+    })
+    .catch(error => {
+        console.warn('Gagal update cart count:', error);
+    });
+}
+
+// Fungsi untuk menampilkan notifikasi
+function showNotification(message, type = 'info') {
+    // Cek apakah ada toast container
+    let toastContainer = document.querySelector('.toast-container');
+    
+    if (!toastContainer) {
+        // Buat toast container jika belum ada
+        toastContainer = document.createElement('div');
+        toastContainer.className = 'toast-container position-fixed top-0 end-0 p-3';
+        toastContainer.style.zIndex = '9999';
+        document.body.appendChild(toastContainer);
+    }
+
+    // Buat toast element
+    const toastId = 'toast-' + Date.now();
+    const toastHTML = `
+        <div id="${toastId}" class="toast align-items-center text-white bg-${type === 'success' ? 'success' : 'danger'} border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} me-2"></i>
+                    ${message}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    `;
+
+    toastContainer.insertAdjacentHTML('beforeend', toastHTML);
+    
+    const toastElement = document.getElementById(toastId);
+    
+    // Jika Bootstrap toast tersedia
+    if (typeof bootstrap !== 'undefined' && bootstrap.Toast) {
+        const toast = new bootstrap.Toast(toastElement, {
+            autohide: true,
+            delay: 3000
+        });
+        toast.show();
+        
+        // Hapus element setelah selesai
+        toastElement.addEventListener('hidden.bs.toast', () => {
+            toastElement.remove();
+        });
+    } else {
+        // Fallback jika Bootstrap tidak tersedia
+        toastElement.style.display = 'block';
+        setTimeout(() => {
+            toastElement.style.opacity = '0';
+            setTimeout(() => {
+                toastElement.remove();
+            }, 300);
+        }, 3000);
+    }
+}
+
+    // Wishlist Button Toggle (bisa banyak tombol)
+    document.querySelectorAll('.btn-wishlist').forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('far')) {
+                icon.classList.replace('far', 'fas');
+                this.style.color = '#ff5252';
+            } else {
+                icon.classList.replace('fas', 'far');
+                this.style.color = '';
+            }
+        });
+    });
+
+    // Toggle Login / Sign Up Form
     const toggleLoginForm = document.getElementById('toggleLoginForm');
     const formSignup = document.getElementById('form-signup');
     const formLogin = document.getElementById('form-login');
@@ -758,14 +1052,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             if (formSignup.classList.contains('d-none')) {
-                // Show Sign Up, Hide Login
                 formSignup.classList.remove('d-none');
                 formLogin.classList.add('d-none');
                 modalTitle.textContent = 'Create your account';
                 toggleLoginForm.textContent = 'Sign in';
                 toggleLoginForm.previousSibling.textContent = 'Already have an account? ';
             } else {
-                // Show Login, Hide Sign Up
                 formLogin.classList.remove('d-none');
                 formSignup.classList.add('d-none');
                 modalTitle.textContent = 'Login to your account';
@@ -774,7 +1066,43 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Make addToCart function global
+    window.addToCart = addToCart;
 });
+
+function addToCart(name, price, image) {
+  const product = { name, price, image };
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push(product);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(`${name} has been added to your cart!`);
+}
+
 </script>
+
+<script>
+  function addToCart(name, price, image) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Cek apakah item sudah ada
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({
+        name: name,
+        price: price,
+        image: image,
+        quantity: 1
+      });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert("Produk ditambahkan ke keranjang!");
+  }
+</script>
+
+
 </body>
 </html>

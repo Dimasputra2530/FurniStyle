@@ -449,7 +449,7 @@
     <div class="modal-content" style="border-radius: 15px; overflow: hidden;">
       <div class="d-flex flex-row">
         <!-- Left: Form Area -->
-        <div class="col-md-6 p-5">
+        <div class="col-md-6 p-5 bg-white">
           <div class="modal-header border-0 p-0 mb-3">
             <h5 class="modal-title fw-bold text-success" id="authModalLabel">Login to your account</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -500,15 +500,23 @@
           </form>
 
           <div class="text-center mt-3">
-            <small>Already have an account? <a href="#" id="toggleLoginForm">Sign up</a></small>
+            <small>Don't have an account? <a href="#" id="toggleSignupForm">Sign up</a></small>
           </div>
         </div>
 
         <!-- Right: Image Area -->
-        <div class="col-md-6 d-none d-md-block" style="background: url('/image/Rectangle 9 (1).png') center center / cover no-repeat;">
-          <div class="h-100 d-flex align-items-center justify-content-center text-white p-4" style="background-color: rgba(0,0,0,0.4);">
+        <div class="col-md-6 d-none d-md-block"
+             style="background: url('/image/Rectangle 9 (1).png') center center / cover no-repeat;">
+          <div class="h-100 d-flex align-items-center justify-content-center text-white p-4"
+               style="background-color: rgba(0,0,0,0.4);">
             <h4 class="text-center">Discovering the Best Furniture for Your Home</h4>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
@@ -522,7 +530,7 @@
 <scrip>
 document.addEventListener('DOMContentLoaded', function () {
   const userIcon = document.querySelector('.profile-circle');
-  const toggleLink = document.getElementById('toggleLoginForm');
+  const toggleLink = document.getElementById('toggleSignupForm');
   const formSignup = document.getElementById('form-signup');
   const formLogin = document.getElementById('form-login');
   const authTitle = document.getElementById('authModalLabel');
@@ -541,17 +549,12 @@ document.addEventListener('DOMContentLoaded', function () {
   if (toggleLink && formSignup && formLogin && authTitle) {
     toggleLink.addEventListener('click', function (e) {
       e.preventDefault();
-      if (formSignup.classList.contains('d-none')) {
-        formSignup.classList.remove('d-none');
-        formLogin.classList.add('d-none');
-        authTitle.innerText = 'Create your account';
-        toggleLink.innerText = 'Log in';
-      } else {
-        formSignup.classList.add('d-none');
-        formLogin.classList.remove('d-none');
-        authTitle.innerText = 'Login to your account';
-        toggleLink.innerText = 'Sign up';
-      }
+      const isSignupVisible = !formSignup.classList.contains('d-none');
+
+      formSignup.classList.toggle('d-none', isSignupVisible);
+      formLogin.classList.toggle('d-none', !isSignupVisible);
+      authTitle.innerText = isSignupVisible ? 'Login to your account' : 'Create your account';
+      toggleLink.innerText = isSignupVisible ? 'Sign up' : 'Log in';
     });
   }
 });
@@ -567,6 +570,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 </script>
+
     
 </body>
 </html>
