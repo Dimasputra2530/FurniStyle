@@ -435,11 +435,6 @@ header {
     font-size: 0.8rem;
 }
 
-.made-by {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-}
-
 /* Updated Modal Styles */
 .modal-dialog {
   max-width: 800px;

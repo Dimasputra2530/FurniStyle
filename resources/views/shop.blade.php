@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- custom CSS -->
     <link rel="stylesheet" href="/css/shop.css">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="{{ asset('js/popupdetail.js') }}"></script>
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/png">
 
 </head>
 <body>
@@ -28,10 +29,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-           <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/') }}">HOME</a>
+                            <a class="nav-link" href="{{ url('/home') }}">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ url('/shop') }}">SHOP</a>
@@ -40,7 +41,7 @@
                             <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">COLLECTION</a>
+                            <a class="nav-link" href="{{ url('/layouts') }}">LAYOUTS</a>
                         </li>
                     </ul>
                 
@@ -146,267 +147,187 @@
                 <div class="sidebar-section">
                     <h3 class="sidebar-heading">MATERIAL</h3>
                     <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fa-solid fa-tree"></i> Wood</a></li>
-                        <li><a href="#"><i class="fa-solid fa-wine-glass"></i> Glass</a></li>
-                        <li><a href="#"><i class="fa-solid fa-shirt"></i> Fabric</a></li>
+                        <li><a href="{{ url('wood-shop') }}" class="active"><i class="fa-solid fa-tree"></i> Wood</a></li>
+                        <li><a href="{{ url('glass-shop') }}"><i class="fa-solid fa-wine-glass"></i> Glass</a></li>
+                        <li><a href="{{ url('fabric-shop') }}"><i class="fa-solid fa-shirt"></i> Fabric</a></li>
                     </ul>
                 </div>
                 
                 <div class="sidebar-section">
                     <h3 class="sidebar-heading">PACKAGE</h3>
                     <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fa-solid fa-tag"></i> BRAND</a></li>
-                        <li><a href="#"><i class="fa-solid fa-bed"></i> Bedroom</a></li>
-                        <li><a href="#"><i class="fa-solid fa-bath"></i> Bathroom</a></li>
-                        <li><a href="#"><i class="fa-solid fa-kitchen-set"></i> Kitchen Sets</a></li>
+                        <li><a href="{{ url('livingroom') }}"><i class="fa-solid fa-couch"></i> Living Room</a></li>
+                        <li><a href="{{ url('kitchen') }}"><i class="fa-solid fa-utensils"></i> Kitchen</a></li>
+                        <li><a href="{{ url('bedroom') }}"><i class="fa-solid fa-bed"></i> Bedroom</a></li>
+                        <li><a href="{{ url('homeoffice') }}"><i class="fa-solid fa-laptop-house"></i> Home Office</a></li>
+                        <li><a href="{{ url('storage') }}"><i class="fa-solid fa-boxes-stacked"></i> Storage</a></li>
+                        <li><a href="{{ url('laundry') }}"><i class="fa-solid fa-soap"></i> Laundry</a>
                     </ul>
                 </div>
                 
-                <div class="sidebar-section">
-                    <h3 class="sidebar-heading">CONTACT</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        <li><a href="#"><i class="fa-solid fa-envelope"></i> Email</a></li>
-                    </ul>
-                </div>
-            </div>
-
             <!-- Product Grid -->
             <div class="col-lg-10">
                 <div class="container product-grid">
                     <div class="row">
-
-                <!-- Product 1 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/burebeto-chair.jpg') }}" alt="BERUBETTO CHAIR" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>BERUBETTO CHAIR</h5>
-      <p class="price">$139</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('BERUBETTO CHAIR', 139, '{{ asset('/image shop/burebeto-chair.jpg') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 2 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>TOLA SOFA</h5>
-      <p class="price">$645</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('TOLA SOFA', 645, '{{ asset('/image shop/tola-sofa.jpg') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 3 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>RIRAKKUSU CHAIR</h5>
-      <p class="price">$344</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('RIRAKKUSU CHAIR', 344, '{{ asset('/image shop/rirakuru-chair.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 4 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>MOKUZAI TABLE</h5>
-      <p class="price">$200</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('MOKUZAI TABLE', 200, '{{ asset('/image shop/mokuzai-table.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 5 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>OHARA LAMP</h5>
-      <p class="price">$99</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('OHARA LAMP', 99, '{{ asset('/image shop/ohara-lamp.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 6 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>MOKUZAI TABLE</h5>
-      <p class="price">$200</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('MOKUZAI TABLE', 200, '{{ asset('image shop/mokuzai-chair.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 7 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>EGGHEAD LAMP</h5>
-      <p class="price">$99</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('EGGHEAD LAMP', 99, '{{ asset('/image shop/egghead-lamp.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 8 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>SAKAZUKI SOFA</h5>
-      <p class="price">$250</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('SAKAZUKI SOFA', 250, '{{ asset('/image shop/sakazuki-chair.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 9 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>KUREHA CANDLE</h5>
-      <p class="price">$150</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('KUREHA CANDLE', 150, '{{ asset('/image shop/kureha-candle.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 10 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>KUZAN SOFA</h5>
-      <p class="price">$200</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('KUZAN SOFA', 200, '{{ asset('/image shop/kuzan-sofa.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 11 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>INUARASHI CHAIR</h5>
-      <p class="price">$130</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('INUARASHI CHAIR', 130, '{{ asset('/image shop/inurashi-chair.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Product 12 -->
-<div class="col-md-4 mb-4">
-  <div class="product-card">
-    <div class="product-image">
-      <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
-    </div>
-    <div class="product-info">
-      <h5>NEKOMAMUSHI CHAIR</h5>
-      <p class="price">$150</p>
-    </div>
-    <div class="action-buttons">
-      <button class="btn btn-add-cart"
-              onclick="addToCart('NEKOMAMUSHI CHAIR', 150, '{{ asset('/image shop/nekomomushi-chair.png') }}')">
-        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
-      </button>
-    </div>
-  </div>
-</div>
-
-
-     <!-- Footer Section -->
+                        <!-- Product 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/burebeto-chair.jpg') }}"  alt="BERUBETTO CHAIR" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>BERUBETTO CHAIR</h5>
+                                    <p class="price">$139</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/tola-sofa.jpg') }}" alt="TOLA SOFA" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>TOLA SOFA</h5>
+                                    <p class="price">$645</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/rirakuru-chair.png') }}" alt="RIRAKKUSU CHAIR" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>RIRAKKUSU CHAIR</h5>
+                                    <p class="price">$344</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/mokuzai-table.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>MOKUZAI TABLE</h5>
+                                    <p class="price">$200</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/ohara-lamp.png') }}" alt="OHARA LAMP" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>OHARA LAMP</h5>
+                                    <p class="price">$99</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 6 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('image shop/mokuzai-chair.png') }}" alt="MOKUZAI TABLE" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>MOKUZAI TABLE</h5>
+                                    <p class="price">$200</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 7 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/egghead-lamp.png') }}" alt="EGGHEAD LAMP" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>EGGHEAD LAMP</h5>
+                                    <p class="price">$99</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 8 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/sakazuki-chair.png') }}" alt="SAKAZUKI SOFA" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>SAKAZUKI SOFA</h5>
+                                    <p class="price">$250</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Product 9 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/kureha-candle.png') }}" alt="KUREHA CANDLE" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>KUREHA CANDLE</h5>
+                                    <p class="price">$150</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 10 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/kuzan-sofa.png') }}" alt="KUZAN SOFA" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>KUZAN SOFA</h5>
+                                    <p class="price">$200</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 11 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/inurashi-chair.png') }}" alt="INUARASHI CHAIR" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>INUARASHI CHAIR</h5>
+                                    <p class="price">$130</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 12 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="product-card">
+                                <div class="product-image">
+                                    <img src="{{ asset('/image shop/nekomomushi-chair.png') }}" alt="NEKOMAMUSHI CHAIR" class="img-fluid">
+                                </div>
+                                <div class="product-info">
+                                    <h5>NEKOMAMUSHI CHAIR</h5>
+                                    <p class="price">$150</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+    <!-- footer section -->
     <footer class="site-footer">
         <div class="container">
             <div class="row">
@@ -416,33 +337,27 @@
                         Beautiful furniture for beautiful homes. Quality design that lasts a lifetime.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="text-decoration-none"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-decoration-none"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/furnistyle.idn?igsh=M2RoNmZiM3FtaDlx"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">SHOP</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-decoration-none">Living Room</a></li>
-                        <li><a href="#" class="text-decoration-none">Kitchen</a></li>
-                        <li><a href="#" class="text-decoration-none">Bedroom</a></li>
-                        <li><a href="#" class="text-decoration-none">Home Office</a></li>
-                        <li><a href="#" class="text-decoration-none">New Arrivals</a></li>
+                    <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
+                    <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
+                    <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
+                    <li><a href="{{ url('/homeoffice') }}">Home Office</a></li>
+                    <li><a href="{{ url('/storage') }}">Storage</a></li>
+                    <li><a href="{{ url('/laundry') }}">Laundry</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">LINKS</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="text-decoration-none">About Us</a></li>
-                        <li><a href="#" class="text-decoration-none">Contact</a></li>
-                        <li><a href="#" class="text-decoration-none">FAQ</a></li>
-                        <li><a href="#" class="text-decoration-none">Terms & Conditions</a></li>
-                        <li><a href="#" class="text-decoration-none">Privacy Policy</a></li>
-                    </ul>
+                        <li><a href="{{ url('/about') }}">About Us</a></li>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
@@ -460,10 +375,6 @@
                     <div class="col-md-6">
                         <p class="copyright">© 2025 FurniStyle. All Rights Reserved.</p>
                     </div>
-                    <div class="col-md-6 text-md-end">
-                        <p class="made-by">MADE WITH LOVE</p>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
