@@ -107,11 +107,10 @@
           <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
             <h3 class="footer-title">SHOP</h3>
             <ul class="footer-links">
-              <li><a href="#" class="text-decoration-none">Living Room</a></li>
-              <li><a href="#" class="text-decoration-none">Kitchen</a></li>
-              <li><a href="#" class="text-decoration-none">Bedroom</a></li>
-              <li><a href="#" class="text-decoration-none">Home Office</a></li>
-              <li><a href="#" class="text-decoration-none">New Arrivals</a></li>
+              <li><a href="{{ url('/shop') }}">Chair</a></li>
+                    <li><a href="{{ url('/shop') }}">table</a></li>
+                    <li><a href="{{ url('/shop') }}">Lamp</a></li>
+                    <li><a href="{{ url('/shop') }}">Decor</a></li>
             </ul>
           </div>
 
@@ -134,7 +133,7 @@
             <h3 class="footer-title">CONTACT</h3>
             <ul class="footer-contact">
               <li>
-                <i class="fas fa-map-marker-alt"></i> Jln. Pangeran 12,
+                <i class="fas fa-map-marker-alt"></i> Jln. Gerilya 12,
                 Purwokerto
               </li>
               <li><i class="fas fa-phone"></i> +62 878-1765-3570</li>
@@ -158,7 +157,7 @@
 
   <script>
     function formatCurrency(num) {
-        return '$' + Number(num).toFixed(2);
+        return 'Rp. ' + Number(num).toFixed(2);
     }
 
     function renderCart() {
@@ -208,42 +207,18 @@
         renderCart();
     }
 
+    //function agar ketika klik maka lanjut ke checkout
     function orderNow() {
-        const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-        if (cart.length === 0) {
-            alert("Keranjang kosong.");
-            return;
-        }
-
-        console.log("Data cart yang dikirim:", cart);
-        alert(JSON.stringify(cart));
-
-        fetch("/orders", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-            },
-            body: JSON.stringify({ cart: cart })
-        })
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Server error");
-            }
-            return res.json();
-        })
-        .then(data => {
-            alert(data.message);
-            localStorage.removeItem("cart");
-            location.reload();
-        })
-        .catch(err => {
-            console.error(err);
-            alert("Terjadi kesalahan saat mengirim pesanan.");
-        });
+    if (cart.length === 0) {
+        alert("Keranjang kosong.");
+        return;
     }
+
+    // Simpan cart sementara di localStorage dan redirect ke halaman checkout
+    window.location.href = "/checkout";
+}
 
     document.addEventListener("DOMContentLoaded", renderCart);
 </script>

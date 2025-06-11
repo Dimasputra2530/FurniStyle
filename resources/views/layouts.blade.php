@@ -64,29 +64,14 @@
     </header>
 
 
-  <!-- Room Images Grid -->
-  <main class="container my-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
-      <div class="col room-item">
-        <img src="{{ asset('/image layouts/layout1.jpg') }}" alt="Room 1" class="img-fluid rounded">
-      </div>
-      <div class="col-sm-12 col-md-6 room-item">
-        <img src="{{ asset('/image layouts/layout2.jpg') }}" alt="Room 2" class="img-fluid rounded">
-      </div>
-      <div class="col-sm-12 col-md-6 room-item">
-        <img src="{{ asset('/image layouts/layout3.jpg') }}" alt="Room 2" class="img-fluid rounded">
-      </div>
-      <div class="col-sm-12 col-md-6 room-item">
-        <img src="{{ asset('/image layouts/layout4.jpg') }}" alt="Room 2" class="img-fluid rounded">
-      </div>
-      <div class="col-sm-12 col-md-6 room-item">
-        <img src="{{ asset('/image layouts/layout5.jpg') }}" alt="Room 2" class="img-fluid rounded">
-      </div>
-       <div class="col-sm-12 col-md-6 room-item">
-        <img src="{{ asset('/image layouts/layout6.jpg') }}" alt="Room 2" class="img-fluid rounded">
-      </div>
-    </div>
-  </main>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
+    @foreach ($layouts as $layout)
+        <div class="col room-item">
+            <img src="{{ asset('storage/' . $layout->image) }}" alt="Layout Image" class="img-fluid rounded">
+        </div>
+    @endforeach
+</div>
+
 
     <!-- footer section -->
     <footer class="site-footer">
@@ -106,11 +91,10 @@
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
                     <h3 class="footer-title">SHOP</h3>
                     <ul class="footer-links">
-                    <li><a href="{{ url('/livingroom') }}">Living Room</a></li>
-                    <li><a href="{{ url('/kitchen') }}">Kitchen</a></li>
-                    <li><a href="{{ url('/bedroom') }}">Bedroom</a></li>
-                    <li><a href="{{ url('/storage') }}">Storage</a></li>
-                    <li><a href="{{ url('/laundry') }}">Laundry</a></li>
+                    <li><a href="{{ url('/shop') }}">Chair</a></li>
+                    <li><a href="{{ url('/shop') }}">table</a></li>
+                    <li><a href="{{ url('/shop') }}">Lamp</a></li>
+                    <li><a href="{{ url('/shop') }}">Decor</a></li>
                     </ul>
                 </div>
                 

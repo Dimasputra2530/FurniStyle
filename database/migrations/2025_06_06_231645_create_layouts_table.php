@@ -12,15 +12,13 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('orders', function (Blueprint $table) {
-        $table->id();
-        $table->string('product_name');
-        $table->decimal('price', 10, 2);
-        $table->integer('quantity');
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('layouts', function (Blueprint $table) {
+            $table->id();
+            $table->string('image');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('layouts');
     }
 };
