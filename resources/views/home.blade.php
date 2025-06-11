@@ -527,7 +527,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- JavaScript Interaktif -->
-<scrip>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
   const userIcon = document.querySelector('.profile-circle');
   const toggleLink = document.getElementById('toggleSignupForm');
